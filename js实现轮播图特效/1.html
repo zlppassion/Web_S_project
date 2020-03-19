@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="aha.css"/>
+		
+	</head>
+	<body>
+		<!--整个大的焦点图放在div内-->
+		<div class="main" id="main">
+			<div class="menu-box"></div>
+			<!--子菜单-->
+			<div class="sub-menu hide" id="sub-menu"><!--整个子菜单盒子-->
+				<div class="inner-box"><!--把每一个子菜单定义在inner-box里面-->
+					<div class="sub-inner-box"><!--内容盒子，放具体内容-->
+						<div class="title">前端开发</div>
+						<div class="sub-row">
+							<a href="" class="mr10">HTML/CSS</a>
+							<a href="" class="mr10">Javascript</a>
+							<a href="" class="mr10">Vue.js</a>
+							<a href="" class="mr10">React.JS</a>
+							<a href="" class="mr10">Node.js</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="inner-box">
+					<div class="sub-inner-box">
+						<div class="title">后端开发</div>
+						<div class="sub-row">
+							
+							<a href="" class="mr10">Java</a>
+							<a href="" class="mr10">SpringBoot</a>
+							<a href="" class="mr10">C</a>
+							<a href="" class="mr10">C++</a>
+							<a href="" class="mr10">RUby</a>
+						</div>
+							</div>
+				</div>
+				<div class="inner-box">
+					<div class="sub-inner-box">
+						<div class="title">云计算与大数据</div>
+						<div class="sub-row">
+							
+							<a href="" class="mr10">大数据</a>
+							<a href="" class="mr10">Hadoop</a>
+							<a href="" class="mr10">Spark</a>
+							<a href="" class="mr10">Hbase</a>
+							<a href="" class="mr10">云计算</a>
+						</div>
+									</div>
+				</div>
+				<div class="inner-box">
+					<div class="sub-inner-box">
+						<div class="title">数据库</div>
+						<div class="sub-row">
+							
+							<a href="" class="mr10">MySQL</a>
+							<a href="" class="mr10">Redis</a>
+							<a href="" class="mr10">MongoDB</a>
+							<a href="" class="mr10">Oracle</a>
+							<a href="" class="mr10">SQL Server</a>
+						</div>
+											</div>
+				</div>
+						
+				
+			</div>
+			<!--主菜单-->
+			<div class="menu-content" id="menu-content">
+				<div class="menu-item">
+					<a href="">
+						<span>前端/小程序/JS
+							<i class="icon-circle-right"></i>
+						</span>
+					</a>
+				</div>
+				<div class="menu-item">
+					<a href="">
+						<span>后端/JAVA/Python
+							<i class="icon-circle-right"></i>
+						</span>
+					</a>
+				</div>
+				<div class="menu-item">
+					<a href="">
+						<span>云计算/大数据/容器
+							<i class="icon-circle-right"></i>
+						</span>
+					</a>
+				</div>
+				<div class="menu-item">
+					<a href="">
+						<span>运维/测试/数据库
+							<i class="icon-circle-right"></i>
+						</span>
+					</a>
+				</div>
+			</div>
+			<!--焦点图-->
+			<div class="banner" id="banner">
+				<a href=""><!--每张图都是一个链接，最好以背景存在，而不是插入-->
+					<div class="banner-slide slide1 slide-active"></div>
+				</a>
+				<a href=""><!--每张图都是一个链接，最好以背景存在，而不是插入-->
+					<div class="banner-slide slide2"></div>
+				</a>
+				<a href=""><!--每张图都是一个链接，最好以背景存在，而不是插入-->
+					<div class="banner-slide slide3"></div>
+				</a>
+			</div>
+			<a href="javascript:void(0)" class="button prev" id="prev" ></a>
+			<a href="javascript:void(0)" class="button next" id="next"></a>
+			<div class="dots" id="dots">
+				<span class="active"></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<script type="text/javascript" src="script.js">
+			
+		</script>
+	</body>
+</html>

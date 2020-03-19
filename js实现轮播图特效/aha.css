@@ -1,0 +1,238 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: "微软雅黑";
+	color:#14191e;
+}
+/*这两个a的样式都是主菜单的*/
+a{
+	text-decoration: none;
+	
+}
+a:link,a:visited{
+	color: #5e5e5e;
+}
+/*去iconmoon网站下载的矢量图图标，可以减少http请求，较强灵活性*/
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?uyl01g');
+  src:  url('fonts/icomoon.eot?uyl01g#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?uyl01g') format('truetype'),
+    url('fonts/icomoon.woff?uyl01g') format('woff'),
+    url('fonts/icomoon.svg?uyl01g#icomoon') format('svg');
+  /*font-weight: normal;
+  font-style: normal;
+  font-display: block;*/
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-circle-right:before {
+  content: "\ea42";
+}
+.main{
+	width:1200px;
+	height: 489px;
+	margin: 30px auto;/*距离顶部30px,左右居中*/
+	overflow:hidden;/*溢出隐藏*/
+	position: relative;
+}
+/*焦点图*/
+.banner{
+	width:1200px;
+	height: 489px;
+	overflow:hidden;/*溢出隐藏*/
+	
+}
+
+.banner-slide{
+	width:1200px;
+	height:489px;
+	float:left;
+	background-repeat: no-repeat;
+	display: none;
+}
+.slide-active{
+	display: block;
+}
+.slide1{
+	background-image: url(bg1.jpg);
+}
+.slide2{
+	background-image: url(bg2.jpg);
+}
+.slide3{
+	background-image: url(bg3.jpg);
+}
+.button/*因为左右按钮是悬浮在图片上的，所以要定位，相对于main定位*/
+{
+	position:absolute;
+	width:49px;
+	height: 80px;
+	left:244px;
+	/*background: #f00;*/
+    top:50%;/*距离顶部百分之50*/
+   margin-top:-40px;/*往上走自身的一半*/
+   background: url(arrow1.png) center center no-repeat;
+   transform: rotate(0deg);/*图片方向不变*/
+}
+.button:hover{
+	background-color: #333;
+	opacity: 0.8;
+	filter:alpha(opacity=80);/*兼容IE浏览器*/
+}
+.next{
+	/* 两个类作用在右边这个箭头，当right和left的值同时定义的时候，会优先使用left。除非left为auto
+	                                                         当top和bottom的值同时定义的时候，会优先使用top。除非top为auto*/
+	left:auto;
+	right:0;
+	transform: rotate(180deg);/*图片方向旋转180度*/
+
+}
+.dots{
+	position: absolute;
+	right:24px;
+	bottom:24px;/*距离底部24像素*/
+	line-height: 12px;
+}
+.dots span{
+	display: inline-block;/*将元素转化为内联元素,内联元素的前面和后面都不会有换行符,即让三个原点在同一水平线上*/
+	width:12px;
+	height:12px;
+	border-radius: 50%;/*显示为正圆*/
+	background-color: rgba(7,17,27,0.4);
+	margin-left: 8px;
+	box-shadow: 0 0 0 2px rgba(255 255 255,0.8) inset;/*设置白色阴影*/
+	cursor:pointer;
+	
+}
+.dots span.active{
+	background-color: #fff;
+	box-shadow: 0 0 0 2px rgba(7,17,27,0.4) inset;活跃的那个原点是描边为暗黑色，填充为白色
+}
+.menu-box{
+	position: absolute;
+	left:0;
+	top:0;
+	width:244px;
+	height: 489px;
+	background-color: rgba(7,17,27,0.3);
+	z-index: 1;
+}
+.menu-content{
+	position: absolute;
+	left:0;
+	top:0;
+	width:244px;
+	height: 489px;
+	z-index: 2;/*这样才可以覆盖在menu-box里*/
+}
+.menu-item{
+	height: 64px;
+	line-height: 66px;
+	cursor: pointer;
+	padding:0 24px;
+}
+
+.menu-item a{
+	display: block;
+	color: #fff;
+	font-size: 16px;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	height:63px;
+	padding:0 8px;
+	position: relative;
+}
+.menu-item:last-child a{
+	border-bottom: none;
+}
+.menu-item i{
+	position: absolute;/*相对于a定位*/
+	right:12px;
+	top:25px;
+	color: rgba(255,255,255,0.5);
+	font-style: normal;
+	font-weight: normal;
+	font-family: "iconmoon";
+}
+.sub-menu{
+	width:767px;
+	height:487px;
+	position: absolute;
+	left: 244px;
+	top:0;
+	background-color: #fff;
+	z-index: 500;
+	border:1px solid #d9dde1;
+	box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+}
+.inner-box{
+	width:100%;
+	height:100%;
+	background-image: url(2.png);
+	background-size: cover;
+	display: none;
+	/*position:relative;*/
+	
+}
+.sub-inner-box{
+	
+	background: rgba(255,255,255,0.3);
+	/*//position: absolute;*/
+	width:100%;
+	height:100%;
+	/*margin-left: 40px;*/
+	overflow: hidden;
+	position: relative;
+	
+}
+.title{
+	/*margin-left: 40px;*/
+	font-size: 16px;
+	/*color: #f01414;*/
+	/*color:#000000;*/
+	color: rgba(0,0,0,0.5);
+	line-height: 16px;
+	font-weight: bold;
+	margin:28px 0 30px 40px;
+	position: absolute;
+}
+.sub-row{
+	margin:60px 0 30px 40px;
+	position: absolute;
+	
+}
+/*.bold{
+	font-weight: 700;
+	
+}*/
+.mr10{
+	margin-right: 10px;
+}
+.ml10{
+	margin-left: 10px;
+}
+.hide{
+	display: none;
+}
+/*.active{
+	background-color: #fff;
+	box-shadow: 0 0 0 2px rgba(7,17,27,0.4) inset;活跃的那个原点是描边为暗黑色，填充为白色
+}
+*/
